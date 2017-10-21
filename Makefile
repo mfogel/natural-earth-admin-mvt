@@ -25,6 +25,10 @@ ne-admin.mbtiles: build/admin-0.mbtiles
 .PHONY: all
 all: ne-admin.mbtiles
 
+.PHONY: serve
+serve: ne-admin.mbtiles
+	docker run -it -v $(CURDIR):/data:ro -p 8080:80 klokantech/tileserver-gl-light $<
+
 .PHONY: clean
 clean:
 	rm -rf build

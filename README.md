@@ -34,6 +34,14 @@ Some Admin 0 features do not yet have their Admin 1 features rendered in the vec
 | CA | Canada | 3 |
 | US | USA | 3 |
 
+## Available `make` commands
+
+### make serve
+
+Starts up a webserver in a docker container to allow you to visually inspect your local `ne-admin.mbtiles`. While running the webserver container in a terminal window, load http://localhost:8080/ in a browser. To quit the webserver, use `ctrl-c`.
+
+For this to work, you will need to have previously installed [docker](https://www.docker.com/) and the [klokantech/tileserver-gl-light](https://hub.docker.com/r/klokantech/tileserver-gl-light/) image.
+
 ## Contributing
 
 Bugs, feature suggestions - please file a github issue or make a pull request.
