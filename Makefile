@@ -16,8 +16,8 @@ downloads/ne_10m_admin_0_countries_lakes.geojson:
 
 build/admin-0.mbtiles: downloads/ne_10m_admin_0_countries_lakes.geojson
 	mkdir -p build
-	# TODO: lowercase 'name', add 'id'
-	tippecanoe -f -o $@ -z 3 -y NAME --detect-shared-borders --detect-longitude-wraparound -l admin-0 $<
+	jq -c '.features[] | .properties = {"name": .properties.NAME, "id": .properties.ISO_A2}' $< \
+		| tippecanoe -f -o $@ -z 3 --detect-shared-borders --detect-longitude-wraparound -l admin-0
 
 ne-admin.mbtiles: build/admin-0.mbtiles
 	cp $< $@

@@ -20,7 +20,7 @@ Create the file `ne-admin.mbtiles`, which is a bundled package of [Mapbox Vector
 
 #### Prerequisites
 
-You'll need to have already installed [curl](https://curl.haxx.se/), [gzip](http://www.gzip.org/), and [tippecanoe](https://github.com/mapbox/tippecanoe) on your machine.
+You'll need to have already installed [curl](https://curl.haxx.se/), [gzip](http://www.gzip.org/), [jq](https://stedolan.github.io/jq/), and [tippecanoe](https://github.com/mapbox/tippecanoe) on your machine.
 
 #### Data
 
