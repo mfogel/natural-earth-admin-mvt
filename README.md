@@ -28,18 +28,10 @@ Features are sourced from the [10m Natural Earth Admin 0 and Admin 1 geojson](ht
 
 #### Layers
 
-Features in the vector tiles are organized into a series of layers.
+Features in the vector tiles are organized into two layers:
 
-* `admin-0`: All Admin 0 features. Rendered into zoom levels 0-3.
-* `admin-1.XX`: Admin 1 features of the Admin 0 feature with the ISO 3166-1 Alpha 2 code of `XX`. Depending on the physical size of the Admin 1 features in the layer, this layer is rendered to either: zoom levels 3 thru 5, zoom levels 4 and 5, or just zoom level 5.
-
-Some Admin 0 features do not yet have their Admin 1 features rendered in the vector tiles. Currently, the rendered vector tiles contain Admin 1 layers for the following Admin 0 entities:
-
-| ISO 3166-1 Alpha 2 | Name | Minimum rendered zoom level |
-| --- | --- | --- |
-| AR | Argentina | 4 |
-| CA | Canada | 3 |
-| US | USA | 3 |
+* `admin-0`: All Admin 0 features. Rendered into all zoom levels.
+* `admin-1`: All Admin 1 features. Rendered into zoom levels 3-5.
 
 #### Tags
 
@@ -72,8 +64,6 @@ Everything `make clean` does, and also delete the raw downloads of Natural Earth
 ## Contributing
 
 Bugs, feature suggestions - please file a github issue or make a pull request.
-
-Adding additional Admin 1 layers is an ongoing task and help is appreciated.
 
 ## License
 
