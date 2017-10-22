@@ -26,13 +26,6 @@ You'll need to have already installed [curl](https://curl.haxx.se/), [gzip](http
 
 Features are sourced from the [10m Natural Earth Admin 0 and Admin 1 geojson](https://github.com/nvkelso/natural-earth-vector/tree/master/geojson). Major lakes straddling international boundaries are excluded from the features. All features are rendered as polygons/multipolygons in the vector tiles. Zoom levels 0 thru 5 are rendered.
 
-#### Tags
-
-All tags present in the natural earth data are removed, excluding following which are carried through:
-
-* a human-readable, generally english-language `name` field
-* and an `id` field. For Admin 0 features (ie. countries) this is their [ISO 3166-1 Alpha 2](https://www.iso.org/standard/63545.html) code. For Admin 1 features (ie. states/provinces) this is their [ISO 3166-2](https://www.iso.org/standard/63546.html) code.
-
 #### Layers
 
 Features in the vector tiles are organized into a series of layers.
@@ -47,6 +40,20 @@ Some Admin 0 features do not yet have their Admin 1 features rendered in the vec
 | AR | Argentina | 4 |
 | CA | Canada | 3 |
 | US | USA | 3 |
+
+#### Tags
+
+The features in the `admin-0` layer contain only the following tags, their values taken from the Natural Earth source metadata:
+
+* `name`: a human-readable, generally english-language field
+* `iso-3166-1-a2`:  The [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) Alpha 2 code.
+* `iso-3166-1-a3`: The ISO 3166-1 Alpha 3 code.
+* `iso-3166-1-n3` The ISO 3166-1 Numeric code.
+
+Similarily, the features in the `admin-1.XX` layers contain only the following tags:
+
+* `name`: a human-readable, generally english-language field
+* `iso-3166-2`:  The [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) code.
 
 ### `make serve`
 

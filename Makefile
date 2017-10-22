@@ -16,7 +16,7 @@ downloads/ne_10m_admin_0_countries_lakes.geojson:
 
 build/admin-0.mbtiles: downloads/ne_10m_admin_0_countries_lakes.geojson
 	mkdir -p build
-	jq -c '.features[] | .properties = {"name": .properties.NAME, "id": .properties.ISO_A2}' $< \
+	jq -c '.features[] | .properties = ( .properties | { "name": .NAME, "iso-3166-1-a2": .ISO_A2, "iso-3166-1-a3": .ISO_A3, "iso-3166-1-n3": .ISO_N3 } )' $< \
 		| tippecanoe -f -o $@ -z 3 --detect-shared-borders --detect-longitude-wraparound -l admin-0
 
 ne-admin.mbtiles: build/admin-0.mbtiles
