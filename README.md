@@ -35,17 +35,11 @@ Features in the vector tiles are organized into two layers:
 
 #### Tags
 
-The features in the `admin-0` layer contain only the following tags, their values taken from the Natural Earth source metadata:
-
+All features have two tags. Tag values are pulled from Natural Earth data.
 * `name`: a human-readable, generally english-language field
-* `iso-3166-1-a2`:  The [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) Alpha 2 code.
-* `iso-3166-1-a3`: The ISO 3166-1 Alpha 3 code.
-* `iso-3166-1-n3` The ISO 3166-1 Numeric code.
+* `iso`: The [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) Alpha 2 code for the `admin-0` features, and the [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) code for the `admin-1` features.
 
-Similarily, the features in the `admin-1.XX` layers contain only the following tags:
-
-* `name`: a human-readable, generally english-language field
-* `iso-3166-2`:  The [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) code.
+Note that not all features have ISO 3166 codes defined in Natural Earth. Notable exceptions include, as of this writing, Norway and France.
 
 ### `make serve`
 
