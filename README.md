@@ -1,7 +1,5 @@
 # Natural Earth Admin features in Mapbox Vector Tile format
 
-### Note: work in progress. Docs that follow describe functionality currently in development.
-
 ## Quickstart
 
 From the root of the repository, run:
