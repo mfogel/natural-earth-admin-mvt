@@ -8,7 +8,7 @@ SHELL := bash
 
 # If you have a copy of Natural Earth cloned to your local filesystem, you can use it directly:
 # export NE_GEOJSON_DIR=file:///path/to/natural/earth/geojson/dir
-NE_GEOJSON_DIR ?= https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson
+NE_GEOJSON_DIR ?= https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v4.0.0/geojson
 
 downloads/ne_10m_admin_0_countries_lakes.geojson downloads/ne_10m_admin_1_states_provinces_lakes.geojson:
 	curl --create-dirs -o $@ "$(NE_GEOJSON_DIR)/$(notdir $@)"
