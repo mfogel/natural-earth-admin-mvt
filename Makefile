@@ -36,6 +36,7 @@ serve: ne-admin.mbtiles
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -f ne-admin.mbtiles
 
 .PHONY: fullclean
 fullclean: clean
