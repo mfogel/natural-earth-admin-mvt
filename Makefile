@@ -11,10 +11,7 @@ SHELL := bash
 NE_GEOJSON_DIR ?= https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson
 
 downloads/ne_10m_admin_0_countries_lakes.geojson downloads/ne_10m_admin_1_states_provinces_lakes.geojson:
-	# natural earth 4.0, when released, will stop gzipping the geojson
-	# https://github.com/nvkelso/natural-earth-vector/pull/230#issuecomment-337800158
-	curl --create-dirs -o $@.gz "$(NE_GEOJSON_DIR)/$(notdir $@).gz"
-	gzip -f -d $@.gz
+	curl --create-dirs -o $@ "$(NE_GEOJSON_DIR)/$(notdir $@)"
 
 build/admin-0.mbtiles: downloads/ne_10m_admin_0_countries_lakes.geojson
 	mkdir -p build
