@@ -18,7 +18,7 @@ Create the file `ne-admin.mbtiles`, which is a bundled package of [Mapbox Vector
 
 #### Prerequisites
 
-You'll need to have already installed [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and [tippecanoe](https://github.com/mapbox/tippecanoe) on your machine.
+You'll need to have already installed [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), [tippecanoe](https://github.com/mapbox/tippecanoe), and [tileserver-gl-light](https://www.npmjs.com/package/tileserver-gl-light) on your machine.
 
 #### Data
 
@@ -41,9 +41,7 @@ Note that not all features have ISO 3166 codes defined in Natural Earth. Notable
 
 ### `make serve`
 
-Start up a webserver in a docker container to allow you to visually inspect your local `ne-admin.mbtiles`. While running the webserver container in a terminal window, load http://localhost:8080/ in a browser. To quit the webserver, use `ctrl-c`.
-
-For this to work, you will need to have previously installed [docker](https://www.docker.com/) and the [klokantech/tileserver-gl-light](https://hub.docker.com/r/klokantech/tileserver-gl-light/) image.
+Start up a webserver ([tileserver-gl-light](https://www.npmjs.com/package/tileserver-gl-light)) to allow you to visually inspect your local `ne-admin.mbtiles`. While running the webserver in a terminal window, load http://localhost:8080/ in a browser. To quit the webserver, use `ctrl-c`.
 
 ### `make clean`
 
